@@ -1,0 +1,157 @@
+.body {
+  background-color: #f7f7f5;
+}
+
+.nav-text {
+  display: inline-block;
+  margin: 10px;
+}
+
+.inner-content {
+  color: #525C65;
+  font: 16px "Open Sans", sans-serif;
+  padding: 24px;
+}
+
+.header_navbar-logo {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    float: left;
+    display: block;
+    margin-right: 2.21465%;
+    width: 65.92845%;
+}
+
+.navbar-brand-regex {
+  float: right;
+}
+
+.list {
+  padding: 10px;
+  font-weight: 100;
+  font-family: cursive;
+}
+
+.logo-mark {
+  padding: 10px;
+    display: block;
+    margin: 20px;
+}
+
+.logo-mark img {
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.outer-content {
+    background-color: #f7f7f5;
+    padding: 20px;
+}
+
+.inner-content {
+  padding: 50px;
+  background: #000;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.inner-content h1 {
+  color: #fff;
+}
+.main-content{
+  color: #525C65;
+  font: 16px "Open Sans", sans-serif;
+  background: #fff;
+  padding: 4em 1.5em;
+  border: 1px solid #dbe2e8;
+  text-align: justify;
+}
+
+.section {
+  color: #525c65;
+  margin-top: 3em;
+}
+
+.section h3 {
+    color: #2e3d49;
+    font-weight: 300;
+    margin-bottom: 0.75em;
+}
+h1, .h1 {
+    font-size: 2rem;
+    line-height: 2.4375rem;
+    font-weight: 300;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 0;
+    margin-bottom: 0.8125rem;
+    color: #2e3d49;
+    font-family: "Open Sans", sans-serif;
+}
+
+.sub-heading img {
+  width: 80%;
+}
+
+.raw-image img {
+  margin: 10px;
+  width: 80%;
+}
+
+.raw-imagedf img {
+  margin: 10px;
+  width: 30%;
+}
+
+.graph {
+    display: block;
+    border: 1px solid #dbe2e8;
+    background: #fff;
+    padding: 1.5em 1em 1.5em 1em;
+    margin-bottom: 1.4285714286em;
+    border-radius: 0.1875em;
+    width: 100%;
+    text-decoration: none;
+    box-shadow: 0 0.3125em 1.25em 0 rgba(46,61,73,0.12);
+    -webkit-transition: box-shadow 0.3s ease, border 0.3s ease;
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+    overflow: 100%;
+    cursor: pointer;
+  }
+
+.graphimage img {
+  width: 100%;
+}
+.jpnotebook {
+    display: block;
+    border: 1px solid #dbe2e8;
+    background: #fff;
+    border-radius: 0.1875em;
+    padding-left: 10px;
+    padding-top: 6px;
+    margin-bottom: 0.6em;
+    width: 80%;
+    height: auto;
+    box-shadow: 0 0.3125em 1.25em 0 rgba(46,61,73,0.12);
+    cursor: pointer;
+  }
+
+.jpnotebook-1 {
+  display: block;
+  border: 1px solid #dbe2e8;
+  background: #fff;
+  border-radius: 0.1875em;
+  padding-left: 10px;
+  padding-top: 6px;
+  margin-bottom: 0.6em;
+  width: 40%;
+  height: auto;
+  box-shadow: 0 0.3em 1.25em 0 rgba(69,45,73,0.12);
+  cursor: pointer;
+}
+
+  .footer {
+    background-color: #c8c6cc;
+  }
