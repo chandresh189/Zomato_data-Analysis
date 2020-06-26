@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Zomato Data Analysis</title>
+     <link rel="stylesheet" href="stylesheet.css">
+     <link rel="icon"
+      type="image/png"
+      href="images/fevicon.jpg">
+      <meta name="viewpoint" content="width=device-width",initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link rel="stylesheet" href="stylesheet.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </head>
+
+
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="images/icon.png" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
+        <div class="nav-text">Zomato Data Analysis</div>
+      </a>
+      <a class="navbar-brand-regex" href="#">
+        <img src="images/regex.jfif" width="140" height="50" class="d-inline-block align-top" alt="" loading="lazy">
+      </a>
+    </nav>
+      <hr>
+      <div class="outer-content">
+        <div class="inner-content">
+          <div id="heading"><h1>Zomato Data Analysis Report</h1></div>
+          <div class="main-content">
+            <section class="Block-1">
+              <div class="sub-heading">
+                <h3>About Zomato</h3>
+              </div>
+              <p>Zomato is an Indian restaurant aggregator and food delivery start-up founded by Deepinder Goyal and Pankaj Chaddah in 2008. Zomato provides information, menus and user-reviews of restaurants, and also has food delivery options from partner restaurants in select cities.</p>
+              <div class="sub-heading">
+                <h3>About Our Project</h3>
+              </div>
+              <p>India is quite famous for its diverse multi cuisine available in a large number of restaurants and hotel resorts, which is reminiscent of unity in diversity. Restaurant business in India is always evolving. More Indians are warming up to the idea of eating restaurant food whether by dining outside or getting food delivered.
+                The growing number of restaurants in every state of India has been a motivation to inspect the data to get some insights, interesting facts and figures about the Indian food industry in each city.
+                So, this project focuses on analysing the Zomato restaurant data for each city in India.
+              </p>
+              <p>The Project focuses on Customers and Company, we have analyzed the data and made some useful conclusion in the form of Visualizations. The data is vizualized as it becomes easy to analyse data at instant. The Analysis also solve some of the business cases that can directly help the customers finding the Best restaurant in their locality and for the company to grow up and work on the fields they are currently lagging in.</p>
+            </section>
+
+            <div id="secion2" class="section"><h3>Data Preparation</h3>
+              <p>
+                The Dataset is provided to us by REGex Institute for training purpose. The Data can also be found at Kaggle.
+              </p>
+              <p>The dataset contains the following features:</p>
+              <p><i>Name</i>: This feature contains the name of the restaurant in a city</p>
+              <p><i>Price</i>:  Contains the approximate cost of meal</p>
+              <p><i>Cuisine Category</i>:  Consists of different food categories, separated by comma</p>
+              <p><i>City</i>: Contains the name of the city the restaurant is located in. </p>
+              <p><i>City Region</i>: Contains the neighbourhood in which the restaurant is located</p>
+              <p><i>URL</i>: This feature contains the URL of the restaurant on the Zomato website</p>
+              <p><i>Cuisine Type</i>: Type of the restaurant</p>
+              <p><i>Timing</i>: Opening and closing time of a restaurant.</p>
+              <p><i>Rating Type</i>: Ratings in terms of Excellent/Average/Good.</p>
+              <p><i>Rating</i>: Contains the overall rating of the restaurant out of 5</p>
+              <p><i>Votes</i>: Contains total number of votes for the restaurant</p>
+              <a href="https://github.com/chandresh189/Data-Science-project">Dataset can be downloaded from the Repository</a>
+              <p></p>
+            </div>
+
+            <section class="BLock-2">
+              <div class="sub-heading">
+                <h3>Data Integration</h3>
+                <!-- <img src="images/talend.png"></img> -->
+                <p>This step involves integration of all the files containing data for each city into a single file/ data frame. For this, Python’s Pandas, NumPy and Glob libraries have been used.
+                  <ul>
+                    <li>Importing the data as Data Frame</li>
+                    <li>Give the path of Folders Containing CSV Files</li>
+                    <li>Run the Script to Integrate all files inside a folder</li>
+                    <li>Export the new CSV File</li>
+                  </ul>
+                </p>
+              </div>
+              <div id="graph" class="jpnotebook"><p><span style="color:green">import</span> pandas <span style="color:green">as</span> pd</p>
+                <p><span style="color:green">import</span> numpy <span style="color:green">as</span> np</p>
+                <p><span style="color:green">import</span> os</p>
+                <p><span style="color:green">import</span> glob</p>
+              </div>
+              <div id="graph2" class="jpnotebook"><p>all_files <span style="color:purple">=</span> glob.glob(<span style="color:red">r"C:/..../Input" + "/*.csv"</span>)</p></div>
+              <div id="graph2" class="jpnotebook"><p>
+                <p>li <span style="color:purple">=</span> []</p>
+                <p><span style="color:green">for</span> filename <span style="color:green">in</span> all_files:</p>
+                <p style="margin-left:2.5em">df <span style="color:purple">=</span> pd.read_csv(filename, index_col<span style="color:purple">=</span><span style="color:green">None</span>, header<span style="color:purple">=</span>0,quotechar<span style="color:purple">=</span><span style="color:red">' " '</span>),delimiter<span style="color:purple">=</span><span style="color:red">"|"</span>)</p>
+                <p style="margin-left:2.5em">li.append(df.values)</p>
+              </p></div>
+              <div id="graph2" class="jpnotebook"><p>df_np<span style="color:purple">=</span>np.vstack(li)</p></div>
+              <div id="graph2" class="jpnotebook"><p>df1 <span style="color:purple">=</span> pd.DataFrame(df1.values, columns <span style="color:purple">=</span>
+              <p style="margin-left:2.5em">["NAME","PRICE","CUSINE_CATEGORY","CITY","REGION","URL","PAGE NO","CUSINE TYPE"</p>
+              <p style="margin-left:2.5em">,"TIMING","RATING_TYPE","RATING","VOTES"])</p></div>
+              <div id="graph2" class="jpnotebook"><p>df1.drop(columns <span style="color:purple">=</span> [<span style="color:red">PAGE NO","URL","TIMING"</span>],axis<span style="color:purple">=</span>1,inplace<span style="color:purple">=</span>True)</p></div>
+                <div id="graph2" class="jpnotebook"><p>df_final.to_csv(<span style="color:red">r"C:/Users/..../Output.csv</span>",encoding='utf-8', index<span style="color:purple">=</span>False)</p></div>
+
+              <!-- <p>Write about how we Integrated the data</p> -->
+            </section>
+            <div class="sub-heading">
+              <h3>Data Cleaning (Pre-processing)</h3>
+              <p>The next step is data cleaning process. This involves deletion of unnecessary and redundant features of the data.</p>
+              <p>Data Cleaning is the process of ensuring that your data is correct, consistent and useable by identifying any errors or corruptions in the data, correcting or deleting them, or manually processing them as needed to prevent the error from happening again.
+                Data given to us was containing lot of errors like Null values, White Spaces, Hyphen, Latin Letters, Incorrect value.
+                We have used Python Library Pandas for Data Cleaning purpose.
+              <ul>
+                <li>Importing the data as Data Frame</li>
+                <li>Explore the data and check for errors that make data Inefficient for further analysis</li>
+                <li>Check the datatype and convert as per requirement</li>
+                <li>Check for Null Values and the custom Null</li>
+                <li>Replace or Drop Null values, Replace the Null values using Mean taking Groupby.</li>
+                <li>Export the data</li>
+              </ul>
+              </p>
+              <p>For data analysis, we do not need the contact details of the restaurant so, the URL column is removed along with the Page Number column which is also of no use for the analysis.</p>
+              <p>The Null or Garbage values in Rating and Votes column are filled using Mean of the hotels grouping by City and Cuisine Type.</p>
+              <p>Moreover, the timing column is not providing any additional information which may be used for the analysis since only the opening and closing time of the restaurant is specified so, this column is removed as well.</p>
+            </div>
+            <div id="graph2" class="graphimage">
+              <img src="images/notcleaned.png"></img>
+            </div>
+            <p></p>
+            <!-- <div id="graph" class="jpnotebook"><p><span style="color:green">import</span> pandas <span style="color:green">as</span> pd</p>
+              <p><span style="color:green">import</span> numpy <span style="color:green">as</span> np</p>
+              <p><span style="color:green">import</span> os</p>
+              <p><span style="color:green">import</span> matplotlib.pyplot <span style="color:green">import</span> plt</p>
+            </div> -->
+            <div id="graph2" class="jpnotebook"><p>df <span style="color:purple">=</span> pd.read_csv(<span style="color:red">r"C:\....\InputFile.csv"</span>)</p></div>
+            <!-- <div class="raw-image">
+              <img src="images/importcsv.png"></img>
+            </div> -->
+            <div id="graph2" class="jpnotebook"><p>df[<span style="color:red">'RATING'</span>] <span style="color:purple">=</span> pd.to_numeric(df[<span style="color:red">'RATING'</span>],errors<span style="color:purple">=</span>'coerce')</p>
+                                                  <p>df[<span style="color:red">'VOTES'</span>] <span style="color:purple">=</span> pd.to_numeric(df[<span style="color:red">'VOTES'</span>],errors<span style="color:purple">=</span>'coerce')</p>
+                                                </div>
+            <div class="raw-imagedf">
+              <img src="images/dftypes.png"></img>
+            </div>
+            <div id="graph2" class="jpnotebook"><p>df_final<span style="color:purple">=</span>(df1.set_index(df1.columns.drop(<span style="color:red">'CUSINE_CATEGORY'</span>,1).tolist())</P>
+                  <P style="margin-left:2.5em">  .CUSINE_CATEGORY.str.split(',', expand<span style="color:purple">=</span>True)</P>
+                  <P style="margin-left:2.5em">  .stack()</P>
+                  <P style="margin-left:2.5em">  .reset_index()</P>
+                  <P style="margin-left:2.5em">  .rename(columns<span style="color:purple">=</span>{0:<span style="color:red">'CUSINE_CATEGORY'</span>})</P>
+                  <P style="margin-left:2.5em">  .loc[:, df1.columns]</P>
+                  <P style="margin-left:2.5em">)</P>
+              </div>
+            <div id="graph2" class="jpnotebook"><p>missing_values <span style="color:purple">=</span> [<span style="color:red">"none","NEW","Not rated","None"</span>,np.nan])</p>
+              <p>df <span style="color:purple">=</span> pd.read_csv(<span style="color:red">r"C:\....\InputFile.csv"</span> , na_values <span style="color:purple">=</span> missing_values)</p>
+              <p>df.isnull().sum()</p>
+            </div>
+            <div class="raw-imagedf">
+              <img src="images/null.png"></img>
+            </div>
+            <div id="graph2" class="jpnotebook"><p>df[<span style="color:red">'RATING'</span>] <span style="color:purple">=</span> df[<span style="color:red">'RATING'</span>].fillna(df.groupby([<span style="color:red">'CITY'</span>,<span style="color:red">'CUSINE TYPE'</span>])[<span style="color:red">'RATING'</span>].transform('mean'))</p>
+            <p>df[<span style="color:red">'VOTES'</span>] <span style="color:purple">=</span> df[<span style="color:red">'VOTES'</span>].fillna(df.groupby(<span style="color:red">'CITY'</span>,<span style="color:red">'CUSINE TYPE'</span>)[<span style="color:red">'VOTES'</span>].transform('mean'))</p>
+            <p>df <span style="color:purple">=</span> df.dropna()</p>
+            </div>
+            <div id="graph2" class="jpnotebook"><p>df.isnull().sum()</p></div>
+            <div class="raw-imagedf">
+              <img src="images/null1.png"></img>
+            </div>
+            <div id="graph2" class="jpnotebook"><p>df.to_csv(<span style="color:red">r"C:\....\Output.csv"</span>,encoding='utf-8', index=False)</p></div>
+            <p>Now that the data has been cleaned, the final data set looks like this:</p>
+            <div id="graph2" class="graphimage">
+              <img src="images/cleaned.png"></img>
+            </div>
+
+<!-- Buisness Cases -->
+            <div id="secion1" class="section">
+              <h3>Data Visualization</h3>
+              <h5>Business Case-1: Check the Cuisines and their Ratings Served by a restaurant in a Region of selected City</h5>
+            </div>
+            <div id="graph2" class="graphimage">
+              <img src="images/case-4.png"</img>
+            </div>
+            <div id="secion3" class="section">
+              <p>
+                The graph prompts the user to select the city and then the region to show the plotted data. It Shows the Restaurants in a particular region of selected City, the Rating of that restaurant and the type of the Cuisine of that restaurant. This can be useful when a user wants to find restaurant in the region and check the restaurants of particular Cuisine with the Best Rating.
+              </p>
+            </div>
+
+            <div id="secion1" class="section">
+              <h5>Business Case-2: Check the average rating of Restaurants in a Region of a City and its Average Price</h5>
+            </div>
+            <div id="graph2" class="graphimage">
+              <img src="images/case-5.png"</img>
+            </div>
+            <div id="secion3" class="section">
+              <p>
+                Visualization show the Cuisine Type vs Price and Region vs Rating graph, User can select the City first and can analyse the Cuisine types in a city and the Average price of that Cuisine this could be helpful for users visiting new cities finding the best cuisines in the city with average price of that cuisine type. Also they can find the Restaurants Rating wise, They can find the region with Rating of restaurants in that region.
+              </p>
+            </div>
+
+            <div id="secion1" class="section">
+              <h5>Business Case-3: Number of Restaurants in a Region of a City</h5>
+            </div>
+            <div id="graph2" class="graphimage">
+              <img src="images/case-1.png"</img>
+            </div>
+            <div id="secion3" class="section">
+              <p>Data is represented showing Number of restaurants in a particular Region of a selected City. User can select a city of which he wishes to find the number of restaurants in the regions of that city. The Company Zomato can figure out in which city it has minimum number of Tie ups with restaurants and after analysing they can expand their business also by analysing the city regions they can also find the regions where they need to put efforts. </p>
+            </div>
+
+            <div id="secion1" class="section">
+              <h5>Business Case-4: Search for Restaurant in particular Region of a Selected city, can also check the Rating</h5>
+            </div>
+            <div id="graph2" class="graphimage">
+              <img src="images/case-3.png"</img>
+            </div>
+            <div id="secion3" class="section">
+              <p>The Scatter plot shows the Restaurant Votes in a region of a City, User can select the city and then can compare the restaurants based on Votes, He can check the available restaurants in the particular region and then can see the votes of restaurants present in that region.  Also it becomes easy to find the best restaurants by looking at the votes a restaurant have and the number of restaurants present in a region.</p>
+            </div>
+
+            <div id="secion1" class="section">
+              <h5>Business Case-5: Find Cuisine offered by Restaurants in a City</h5>
+            </div>
+            <div id="graph2" class="graphimage">
+              <img src="images/case-6.png"</img>
+            </div>
+            <div id="secion3" class="section">
+              <p>
+                The map shows cities having restaurants tie up with Zomato, On selection the city it shows The types of cuisines served in the city, also a User can find the number of restaurants serving the cuisine, On analysing we can find the Best Cuisine in a City, Zomato can use this data to maximise the demand of that cuisine and focus more on that cuisine. Also people visiting different cities can search for Cuisines served in a city and the best Cuisine in that particular city.
+              </p>
+            </div>
+
+            <div id="secion1" class="section">
+              <h5>Business Case-6: Different Cuisine Types and their Average Rating shown on Map</h5>
+            </div>
+            <div id="graph2" class="graphimage">
+              <img src="images/case-2.png"</img>
+            </div>
+            <div id="secion3" class="section">
+              <p>
+                The plotting on the map shows different Cuisine Types and their Rating, The number of cuisine types available can be useful when finding the Highest number of cuisines.
+              </p>
+            </div>
+
+
+            <a href="https://us3.ca.analytics.ibm.com/bi/?perspective=dashboard&id=i708B2D7A0DAA4BC6882F71495B202F92&objRef=i708B2D7A0DAA4BC6882F71495B202F92&options%5Bcollections%5D%5BcanvasExtension%5D%5Bid%5D=com.ibm.bi.dashboard.canvasExtension&options%5Bcollections%5D%5BfeatureExtension%5D%5Bid%5D=com.ibm.bi.dashboard.core-features&options%5Bcollections%5D%5Bbuttons%5D%5Bid%5D=com.ibm.bi.dashboard.buttons&options%5Bcollections%5D%5Bwidget%5D%5Bid%5D=com.ibm.bi.dashboard.widgets&options%5Bcollections%5D%5BcontentFeatureExtension%5D%5Bid%5D=com.ibm.bi.dashboard.content-features&options%5Bcollections%5D%5BboardModel%5D%5Bid%5D=com.ibm.bi.dashboard.boardModelExtension&options%5Bcollections%5D%5BsaveServices%5D%5Bid%5D=com.ibm.bi.dashboard.saveServices&options%5Bcollections%5D%5BserviceExtension%5D%5Bid%5D=com.ibm.bi.dashboard.serviceExtension&options%5Bcollections%5D%5BlayoutExtension%5D%5Bid%5D=com.ibm.bi.dashboard.layoutExtension&options%5Bcollections%5D%5BvisualizationExtension%5D%5Bid%5D=com.ibm.bi.dashboard.visualizationExtensionCA&options%5Bcollections%5D%5BcolorSetExtensions%5D%5Bid%5D=com.ibm.bi.dashboard.colorSetExtensions&options%5Bconfig%5D%5BsmartTitle%5D=false&options%5Bconfig%5D%5BeditPropertiesLabel%5D=true&options%5Bconfig%5D%5BnavigationGroupAction%5D=true&options%5Bconfig%5D%5BenableDataQuality%5D=false&options%5Bconfig%5D%5BmemberCalculation%5D=false&options%5Bconfig%5D%5BassetTags%5D%5B%5D=dashboard&options%5Bconfig%5D%5BfilterDock%5D=true&options%5Bconfig%5D%5BshowMembers%5D=true&options%5Bconfig%5D%5BassetType%5D=exploration&options%5Bconfig%5D%5BgeoService%5D=CA&isAuthoringMode=false&boardId=i708B2D7A0DAA4BC6882F71495B202F92">  Dynamic Visualizations can be seen at IBM Cognos</a>
+            <div id="graph" class="jpnotebook-1"><p><span style="color:green">IBM ID- </span>zomato1project@gmail.com</p>
+              <p><span style="color:green">PASSWORD- </span>Zomato1234</p>
+            </div>
+
+
+<!-- Concluison -->
+            <div id="graph3" class="graph"><h3>Conclusion</h3>
+              <p>From this data processing, we can get this following conclusion: There are 105624 restaurants registered on Zomato Apps based in India. Almost 18% of registered restaurants in India are located at New Delhi (19611 restaurants), 13% in Mumbai (14026 restaurants), 7% in Bengaluru (8507 restaurants). 1080 Restaurants in India having Excellent rating type. 11695 Restaurants having Very Good as Rating Type and 336 with Poor Rating. 104 Restaurants having rating above 4.8 and 84 above 4.5. 55462 Restaurants as Quick Bites, 25388 Restaurants having Casual Dining, 5982 as Bakery, 4523 are Cafe. Price range in India Restaurants is very cheap to Expensive. Average cost for two people eats in restaurants (417 Indian Rupees). Over than 30000 restaurants in India is not voted yet by Zomato users. India restaurants has an average-service rated by users. North Indian food, Chinese food, and Fast food is the most favourite cuisine in India. Sheesh Mahal-Virasat Heritage Restaurant in Jaipur Rajasthan and The Theatre Club & Lounge - Radisson Blu in Delhi NCR being the most Expensive with a Price of 6000 Indian Rupees. Bawarchi Restaurant in Hyderabad being the most Voted restaurant with a 41344 votes.</p>
+            </div
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- FOOTER -->
+      <section class="footer">
+          <hr>
+          <div class="row">
+            <div class="col-md-8">
+                <p class="copyright">'  'Designed with <i class="fa fa-heart"></i>  Chandresh, Gunisha, Riya, Rupali</p>
+            </div>
+
+            <div class="col-md-4">
+              <div class="footer-icon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-youtube-play"></i>
+                <i class="fa fa-linkedin"></i>
+              </div>
+            </div>
+          </div>
+      </section>
+  </body>
+</html>
