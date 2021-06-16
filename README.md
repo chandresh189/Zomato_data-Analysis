@@ -13,7 +13,9 @@ The Project focuses on Customers and Company, we have analyzed the data and made
 - Data Cleaning 🚧
 - Data Visualization 👷
 - Solving the Business cases ⛏️
-
+```
+# The Cognos Dashboard ID has Expired, So login will not Work, Instead i have attached some Snaps from the dashboard.
+```
 
 For more details see [Repository](https://github.com/chandresh189/Zomato_data-Analysis).
 
